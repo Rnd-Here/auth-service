@@ -1,4 +1,4 @@
-package com.cinema.auth_service;
+package com.cinema.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

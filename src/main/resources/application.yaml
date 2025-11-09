@@ -1,3 +1,15 @@
 spring:
-  application:
-    name: auth-service
+  datasource:
+    url: jdbc:postgresql://postgres:5432/authdb
+    username: authuser
+    password: authpass
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: "placeHolder"
+  expiration: 3600000  # 1 hour
+server:
+  port: 8081
