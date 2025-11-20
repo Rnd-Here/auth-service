@@ -1,13 +1,9 @@
-package com.cinema.auth_service;
+package com.cinema.auth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class AuthServiceApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
 
 }
