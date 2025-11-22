@@ -2,17 +2,30 @@ package com.cinema.auth.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
-@Table(name = "userDetails")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Table(name = "users")
+@Data // Lombok for getters/setters
 public class User {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    @GeneratedValue
+    private UUID userId;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, unique = true)
+    private String firebaseUid;
+
     private String email;
+    private String phoneNumber;
+    private String displayName;
+    private String photoUrl;
+    private boolean isEmailVerified;
 
-    private String password;
-    private String role; // CREATOR, PRODUCER, FANATIC, ADMIN
+    private LocalDateTime lastLoginAt;
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 }
